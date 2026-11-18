@@ -295,4 +295,20 @@ fs.collection("reviews").orderBy("created","desc").onSnapshot(function(s){rvs=s.
 </script>
 </body>
 </html>
-<var ADMIN_EMAIL = "golubevnikita763@gmail.com">
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin(){ return request.auth != null && request.auth.token.email == 'golubevnikita763@gmail.com'; }
+    match /products/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /reviews/{id} {
+      allow read: if true;
+      allow create, update: if request.auth != null && request.auth.uid == id
+        && request.resource.data.text is string && request.resource.data.text.size() <= 600
+        && request.resource.data.stars in [1,2,3,4,5];
+      allow delete: if isAdmin();
+    }
+  }
+}
