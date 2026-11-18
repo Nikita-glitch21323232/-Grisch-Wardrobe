@@ -6,13 +6,13 @@
 <title>Grisch Wardrobe</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Marck+Script&display=swap">
 <style>
-:root{--bg:#080808;--fg:#f1ece4;--mut:#9a948a;--line:#2a2724;--card:#131211;--gold:#f5c518;--acc:#f5c518;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#080808;--fg:#f1ece4;--mut:#9a948a;--line:#2a2724;--card:#131211;--gold:#f5c518;--acc:#f5c518;color-scheme:dark}
 html{scroll-padding-top:90px;scroll-behavior:smooth}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:18px}
 a{color:inherit;text-decoration:none}
 .up{text-transform:uppercase;letter-spacing:.2em}
-header{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;align-items:center;padding:18px 4vw;border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+header{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;align-items:center;padding:18px 4vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
 .logo{font-family:"Great Vibes","Segoe Script",cursive;font-size:clamp(26px,3vw,38px);font-weight:400}
 nav{display:flex;gap:clamp(14px,3vw,48px);font-size:14px;flex-wrap:wrap}
 nav a,.rbtn{text-transform:uppercase;letter-spacing:.2em;font-size:14px}
@@ -21,12 +21,12 @@ nav a:hover{color:var(--acc)}
 .rbtn{background:none;border:1px solid var(--fg);color:var(--fg);padding:10px 18px;cursor:pointer;font-family:inherit}
 .rbtn:hover{border-color:var(--acc);color:var(--acc)}
 .hero{position:relative;min-height:min(72vh,560px);display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero .bg{position:absolute;right:0;top:0;bottom:0;width:68%;background:url(ССЫЛКА_НА_ГЛАВНОЕ_ФОТО) center/cover no-repeat}
+.hero .bg{position:absolute;right:0;top:0;bottom:0;width:68%;background:url(img/hero.jpg) center/cover no-repeat}
 .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.6) 0%,transparent 30%),linear-gradient(0deg,var(--bg) 0%,transparent 22%),linear-gradient(90deg,var(--bg) 0%,rgba(8,8,8,.85) 30%,rgba(8,8,8,.3) 62%,transparent)}
 .txt{position:relative;z-index:2;padding:50px 6vw}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.2;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 .txt h1{font-family:"Great Vibes","Segoe Script",cursive;font-weight:400;font-size:clamp(40px,5.6vw,78px);line-height:1.05;margin:0}
-.txt hr{width:70px;border:0;border-top:1px solid var(--fg);margin:26px 0 18px;margin-left:0}
+.txt hr{width:70px;border:0;border-top:1px solid var(--fg);margin:26px 0 18px}
 .tag{font-family:"Marck Script","Segoe Script",cursive;font-size:clamp(20px,2.4vw,30px);letter-spacing:.04em}
 .cta{display:inline-block;margin-top:30px;padding:16px 30px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;letter-spacing:.2em;background:none;color:var(--fg);cursor:pointer;font-family:inherit}
 .cta:hover{background:var(--fg);color:var(--bg)}
@@ -59,8 +59,7 @@ nav a:hover{color:var(--acc)}
 .buy:hover{border-color:var(--acc);color:var(--acc)}
 .empty{color:var(--mut);font-size:17px}
 .txtb{max-width:720px;line-height:1.6;color:var(--mut)}
-.txtb b{color:var(--fg);font-weight:500}
-.sig{font-family:"Marck Script","Segoe Script",cursive;font-size:32px;font-weight:400!important;display:block;margin-bottom:6px}
+.sig{font-family:"Marck Script","Segoe Script",cursive;font-size:32px;font-weight:400;color:var(--fg);display:block;margin-bottom:6px}
 footer{display:flex;justify-content:space-between;padding:26px 4vw;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.15em}
 .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:30;overflow:auto;padding:4vh 4vw}
 .ov.on{display:block}
@@ -76,7 +75,6 @@ input,textarea,select{background:var(--card);color:var(--fg);border:1px solid va
 textarea{width:100%;min-height:90px;margin:10px 0}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .row img{width:48px;height:64px;object-fit:cover}
-.row .n{flex:1;min-width:100px;font-size:15px}
 .box{border:1px solid var(--line);padding:16px;margin:16px 0;background:var(--card)}
 .box .row{border:0}
 a,button,.chip,.tile,.item,.buy,.cta,.rbtn{transition:color .35s ease,border-color .35s ease,background .35s ease,transform .5s ease}
@@ -130,20 +128,24 @@ a,button,.chip,.tile,.item,.buy,.cta,.rbtn{transition:color .35s ease,border-col
 <section class="sec" id="contacts"><div class="sh"><h2>Контакты</h2></div>
   <p class="txtb">Telegram-канал: <a href="https://t.me/+tmy1P2CypoEyM2Q6" target="_blank" rel="noopener" style="color:var(--acc);text-decoration:underline">Grisch Wardrobe</a></p></section>
 
-<footer><span>© Grisch Wardrobe</span><a href="https://t.me/+tmy1P2CypoEyM2Q6" target="_blank" rel="noopener">TG</a></footer>
+<footer><span>© Grisch Wardrobe</span><span><a href="#" id="loginLink">Вход</a> · <a href="https://t.me/+tmy1P2CypoEyM2Q6" target="_blank" rel="noopener">TG</a></span></footer>
 
 <div class="ov" id="rvOv"><div class="panel">
   <h3>Отзывы <button class="x" id="rvClose">×</button></h3>
-  <div class="box" id="rvForm">
-    <div id="rvIn">
-      <div class="pick" id="pick"></div>
-      <input id="rvName" placeholder="Имя (необязательно)" style="width:100%;margin-top:8px">
-      <textarea id="rvText" placeholder="Ваш отзыв" maxlength="600"></textarea>
-      <button class="cta sm" id="rvSend">Оставить отзыв</button> <span id="rvMsg" style="font-size:15px;color:var(--mut)"></span>
-    </div>
-    <div id="rvOut" style="display:none;color:var(--mut)">Чтобы оставить отзыв, нужно войти в аккаунт Claude.</div>
+  <div class="box">
+    <div class="pick" id="pick"></div>
+    <input id="rvName" placeholder="Имя (необязательно)" style="width:100%;margin-top:8px">
+    <textarea id="rvText" placeholder="Ваш отзыв" maxlength="600"></textarea>
+    <button class="cta sm" id="rvSend">Оставить отзыв</button> <span id="rvMsg" style="font-size:15px;color:var(--mut)"></span>
   </div>
   <div id="rvList"></div>
+</div></div>
+
+<div class="ov" id="loginOv"><div class="panel" style="max-width:420px">
+  <h3>Вход <button class="x" id="loginClose">×</button></h3>
+  <input id="lEmail" type="email" placeholder="Email" style="width:100%;margin-bottom:10px">
+  <input id="lPass" type="password" placeholder="Пароль" style="width:100%">
+  <p><button class="cta sm" id="lGo">Войти</button> <span id="lMsg" style="font-size:15px;color:var(--mut)"></span></p>
 </div></div>
 
 <div class="ov" id="admin"><div class="panel" style="max-width:900px">
@@ -157,38 +159,76 @@ a,button,.chip,.tile,.item,.buy,.cta,.rbtn{transition:color .35s ease,border-col
     <button class="cta sm" id="add">Добавить товар</button>
   </div><div id="msg" style="font-size:14px;color:var(--mut)"></div></div>
   <div id="list"></div>
+  <p><button class="cta sm" id="logout">Выйти</button></p>
 </div></div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-var TG="https://t.me/+tmy1P2CypoEyM2Q6";
-var CATS=["Трикотаж","Верхняя одежда","Рубашки","Брюки","Аксессуары","Другое"];
-var TILE=["ССЫЛКА_НА_ФОТО_1","ССЫЛКА_НА_ФОТО_2","ССЫЛКА_НА_ФОТО_3","ССЫЛКА_НА_ФОТО_4"];
-var $=function(i){return document.getElementById(i)};
-var db=null,assets=null,isAdmin=false,items=[],uid=null,rvs=[],cat="",rating=5;
+/* ===== НАСТРОЙКИ ===== */
+var FIREBASE_CONFIG = {
+  apiKey: "ВСТАВЬТЕ",
+  authDomain: "ВСТАВЬТЕ",
+  projectId: "ВСТАВЬТЕ",
+  storageBucket: "ВСТАВЬТЕ",
+  messagingSenderId: "ВСТАВЬТЕ",
+  appId: "ВСТАВЬТЕ"
+};
+var ADMIN_EMAIL = "ВАШ_EMAIL";           // тот же, что в правилах
+var TG = "https://t.me/+tmy1P2CypoEyM2Q6";
+var CATS = ["Трикотаж","Верхняя одежда","Рубашки","Брюки","Аксессуары","Другое"];
+var TILE = ["img/t1.jpg","img/t2.jpg","img/t3.jpg","img/t4.jpg"];
+/* ===================== */
+
+firebase.initializeApp(FIREBASE_CONFIG);
+var auth = firebase.auth(), fs = firebase.firestore();
+var $ = function(i){return document.getElementById(i)};
+var isAdmin=false, uid=null, items=[], rvs=[], cat="", rating=5;
+
 function esc(s){var d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML}
 function fmt(p){return p?Number(p).toLocaleString("ru-RU")+" ₽":"Цена по запросу"}
 function opts(sel){return CATS.map(function(c){return '<option'+(c===sel?' selected':'')+'>'+c+'</option>'}).join("")}
+
+/* сжатие фото в браузере: храним прямо в базе, платный Storage не нужен */
+function compress(file,max){return new Promise(function(res,rej){
+  var r=new FileReader();
+  r.onload=function(){var im=new Image();
+    im.onload=function(){var k=Math.min(1,max/Math.max(im.width,im.height));
+      var c=document.createElement("canvas");c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);
+      c.getContext("2d").drawImage(im,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",.8))};
+    im.onerror=rej;im.src=r.result};
+  r.onerror=rej;r.readAsDataURL(file)})}
+
+/* категории */
 $("fCat").innerHTML=opts();
 $("tiles").innerHTML=CATS.slice(0,5).map(function(c,i){return '<div class="tile'+(TILE[i]?'':' noimg')+'" data-c="'+c+'"'+(TILE[i]?' style="background-image:url('+TILE[i]+')"':'')+'><div>'+c+'<small>Перейти →</small></div></div>'}).join("");
 $("tiles").onclick=function(e){var t=e.target.closest(".tile");if(!t)return;cat=t.dataset.c;render();$("catalog").scrollIntoView()};
 $("allCat").onclick=function(){cat="";render()};
 $("chips").onclick=function(e){if(e.target.classList.contains("chip")){cat=e.target.dataset.c;render()}};
+
+/* каталог */
 function render(){
-  $("chips").innerHTML=["",].concat(CATS).map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-c="'+c+'">'+(c||"Все")+'</button>'}).join("");
+  $("chips").innerHTML=[""].concat(CATS).map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-c="'+c+'">'+(c||"Все")+'</button>'}).join("");
   var list=items.filter(function(it){return !cat||(it.d.cat||"Другое")===cat});
   $("empty").style.display=list.length?"none":"block";
-  if(!list.length)$("empty").textContent=db?"Скоро здесь появятся товары.":"Каталог временно недоступен.";
+  if(!list.length)$("empty").textContent="Скоро здесь появятся товары.";
   $("grid").innerHTML=list.map(function(it){var d=it.d;
-    return '<div class="item"><div class="ph">'+(d.img?'<img src="/_blob/'+esc(d.img)+'" alt="">':'')+'</div><div class="info"><b>'+esc(d.name)+'</b><span>'+(d.size?'Размер: '+esc(d.size):'')+'</span><span class="price">'+fmt(d.price)+'</span></div><a class="buy" target="_blank" rel="noopener" href="'+TG+'">Написать Никите</a></div>'}).join("");
+    return '<div class="item"><div class="ph">'+(d.img?'<img src="'+esc(d.img)+'" alt="">':'')+'</div><div class="info"><b>'+esc(d.name)+'</b><span>'+(d.size?'Размер: '+esc(d.size):'')+'</span><span class="price">'+fmt(d.price)+'</span></div><a class="buy" target="_blank" rel="noopener" href="'+TG+'">Написать Никите</a></div>'}).join("");
   if(isAdmin)renderAdmin();
 }
+fs.collection("products").orderBy("created","desc").onSnapshot(function(s){
+  items=s.docs.map(function(x){return{id:x.id,d:x.data()}});render();
+},function(){$("empty").textContent="Каталог временно недоступен.";});
+
+/* админка */
 function renderAdmin(){
   $("list").innerHTML=items.map(function(it){var d=it.d;
-    return '<div class="row" data-id="'+esc(it.id)+'">'+(d.img?'<img src="/_blob/'+esc(d.img)+'">':'<div style="width:48px"></div>')+'<input class="pn" value="'+esc(d.name)+'" style="width:150px"><input class="ps" value="'+esc(d.size)+'" style="width:70px"><input class="pp" type="number" value="'+esc(d.price)+'" style="width:100px"><select class="pc">'+opts(d.cat||"Другое")+'</select><button class="cta sm sv">Сохранить</button><button class="cta sm dl">Удалить</button></div>'}).join("")||'<p class="empty">Товаров пока нет.</p>';
+    return '<div class="row" data-id="'+esc(it.id)+'">'+(d.img?'<img src="'+esc(d.img)+'">':'<div style="width:48px"></div>')+'<input class="pn" value="'+esc(d.name)+'" style="width:150px"><input class="ps" value="'+esc(d.size)+'" style="width:70px"><input class="pp" type="number" value="'+esc(d.price)+'" style="width:100px"><select class="pc">'+opts(d.cat||"Другое")+'</select><button class="cta sm sv">Сохранить</button><button class="cta sm dl">Удалить</button></div>'}).join("")||'<p class="empty">Товаров пока нет.</p>';
 }
 $("list").addEventListener("click",function(e){
   var row=e.target.closest(".row");if(!row)return;
-  var ref=db.collection("products").doc(row.dataset.id);
+  var ref=fs.collection("products").doc(row.dataset.id);
   if(e.target.classList.contains("sv")){
     ref.update({name:row.querySelector(".pn").value,size:row.querySelector(".ps").value,price:Number(row.querySelector(".pp").value)||0,cat:row.querySelector(".pc").value}).then(function(){$("msg").textContent="Сохранено"}).catch(function(){$("msg").textContent="Ошибка сохранения"});
   }else if(e.target.classList.contains("dl")){
@@ -200,9 +240,8 @@ $("add").onclick=function(){
   if(!name){m.textContent="Введите название";return}
   var f=$("fFile").files[0];
   m.textContent="Загрузка…";
-  var up=f&&assets?assets.upload(f).then(function(r){return r.id}):Promise.resolve("");
-  up.then(function(img){
-    return db.collection("products").add({name:name,size:$("fSize").value.trim(),price:Number($("fPrice").value)||0,cat:$("fCat").value,img:img,created:Date.now()});
+  (f?compress(f,900):Promise.resolve("")).then(function(img){
+    return fs.collection("products").add({name:name,size:$("fSize").value.trim(),price:Number($("fPrice").value)||0,cat:$("fCat").value,img:img,created:Date.now()});
   }).then(function(){
     $("fName").value=$("fSize").value=$("fPrice").value=$("fFile").value="";
     m.textContent="Товар добавлен";
@@ -210,43 +249,48 @@ $("add").onclick=function(){
 };
 $("adminBtn").onclick=function(e){e.preventDefault();$("admin").classList.add("on");renderAdmin()};
 $("close").onclick=function(){$("admin").classList.remove("on")};
+$("logout").onclick=function(){$("admin").classList.remove("on");auth.signOut()};
 
+/* вход */
+$("loginLink").onclick=function(e){e.preventDefault();$("loginOv").classList.add("on")};
+$("loginClose").onclick=function(){$("loginOv").classList.remove("on")};
+$("lGo").onclick=function(){
+  auth.signInWithEmailAndPassword($("lEmail").value.trim(),$("lPass").value).then(function(){
+    $("loginOv").classList.remove("on");$("lMsg").textContent="";$("lPass").value="";
+  }).catch(function(){$("lMsg").textContent="Неверный email или пароль"});
+};
+auth.onAuthStateChanged(function(u){
+  if(!u){auth.signInAnonymously().catch(function(){});return}
+  uid=u.uid;
+  isAdmin=!!u.email&&u.email===ADMIN_EMAIL;
+  $("adminBtn").style.display=isAdmin?"inline":"none";
+  $("loginLink").style.display=isAdmin?"none":"inline";
+  renderRv();render();
+});
+
+/* отзывы */
 function paint(){$("pick").innerHTML=[1,2,3,4,5].map(function(n){return '<span data-n="'+n+'" class="'+(n<=rating?'on':'')+'">★</span>'}).join("")}
 paint();
 $("pick").onclick=function(e){var n=e.target.dataset.n;if(n){rating=+n;paint()}};
 $("rvBtn").onclick=function(){$("rvOv").classList.add("on")};
 $("rvClose").onclick=function(){$("rvOv").classList.remove("on")};
 $("rvOv").onclick=function(e){if(e.target===$("rvOv"))$("rvOv").classList.remove("on")};
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){$("rvOv").classList.remove("on");$("admin").classList.remove("on")}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){["rvOv","admin","loginOv"].forEach(function(i){$(i).classList.remove("on")})}});
 function renderRv(){
   $("rvCnt").textContent=rvs.length?"("+rvs.length+")":"";
   $("rvList").innerHTML=rvs.map(function(r){var d=r.d;
     return '<div class="rv"><span class="st">'+'★'.repeat(Math.max(1,Math.min(5,d.stars|0)))+'</span><small>'+esc(d.name||"Аноним")+'</small>'+esc(d.text)+(isAdmin?' <a href="#" class="rvdel" data-id="'+esc(r.id)+'" style="color:var(--mut);font-size:13px">удалить</a>':'')+'</div>'}).join("")||'<p class="empty">Пока нет отзывов — будьте первым.</p>';
 }
-$("rvList").addEventListener("click",function(e){if(e.target.classList.contains("rvdel")){e.preventDefault();if(confirm("Удалить отзыв?"))db.collection("reviews").doc(e.target.dataset.id).delete()}});
+$("rvList").addEventListener("click",function(e){if(e.target.classList.contains("rvdel")){e.preventDefault();if(confirm("Удалить отзыв?"))fs.collection("reviews").doc(e.target.dataset.id).delete()}});
+$("rvSend").onclick=function(){
+  var x=$("rvText").value.trim();
+  if(!x){$("rvMsg").textContent="Напишите текст отзыва";return}
+  if(!uid){$("rvMsg").textContent="Подождите секунду и попробуйте ещё раз";return}
+  fs.collection("reviews").doc(uid).set({name:$("rvName").value.trim(),text:x,stars:rating,created:Date.now()}).then(function(){$("rvText").value="";$("rvMsg").textContent="Спасибо за отзыв!"}).catch(function(){$("rvMsg").textContent="Не удалось отправить"});
+};
+fs.collection("reviews").orderBy("created","desc").onSnapshot(function(s){rvs=s.docs.map(function(x){return{id:x.id,d:x.data()}});renderRv()},function(){renderRv()});
 
-(async function(){
-  try{
-    var user=await claude.use("user");
-    isAdmin=!!(user&&user.canEdit());
-    try{uid=user?await user.id():null}catch(e){}
-    db=await claude.use("db");
-    assets=await claude.use("assets");
-  }catch(e){}
-  if(isAdmin)$("adminBtn").style.display="inline";
-  $("rvIn").style.display=(uid&&db)?"block":"none";$("rvOut").style.display=(uid&&db)?"none":"block";
-  if(!db){render();renderRv();return}
-  var t=setTimeout(render,10000);
-  db.collection("products").orderBy("created","desc").onSnapshot(function(s){
-    clearTimeout(t);items=s.docs.map(function(x){return{id:x.id,d:x.data()||{}}});render();
-  },function(){clearTimeout(t);render()});
-  $("rvSend").onclick=function(){
-    var x=$("rvText").value.trim();
-    if(!x){$("rvMsg").textContent="Напишите текст отзыва";return}
-    db.collection("reviews").doc(uid).set({name:$("rvName").value.trim(),text:x,stars:rating,created:Date.now()}).then(function(){$("rvText").value="";$("rvMsg").textContent="Спасибо за отзыв!"}).catch(function(){$("rvMsg").textContent="Не удалось отправить"});
-  };
-  db.collection("reviews").orderBy("created","desc").onSnapshot(function(s){rvs=s.docs.map(function(x){return{id:x.id,d:x.data()||{}}});renderRv()},function(){renderRv()});
-})();
+/* плавное появление разделов */
 (function(){document.documentElement.classList.add("js");var els=document.querySelectorAll(".sec,.feat");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.08});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add("in")})},4000)})();
 </script>
 </body>
